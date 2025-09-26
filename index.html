@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenialApp - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="glass-container" style="text-align: center;">
+        <h1>🎓 GenialApp</h1>
+        <p style="opacity: 0.8; margin-bottom: 30px;">Choose your role to continue</p>
+
+        <div class="role-buttons">
+            <a href="{{ url_for('teacher') }}" class="role-button teacher-btn">
+                👨‍🏫 Teacher
+                <span>Upload assignments and manage content</span>
+            </a>
+
+            <a href="{{ url_for('student') }}" class="role-button student-btn">
+                👩‍🎓 Student
+                <span>Access and download assignments</span>
+            </a>
+        </div>
+
+        <div style="margin-top: 30px; opacity: 0.6; font-size: 14px;">
+            Flask MVP Application - Termux Ready
+        </div>
+    </div>
+</body>
+</html>

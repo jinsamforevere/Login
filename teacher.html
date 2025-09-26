@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - GenialApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="glass-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>👨‍🏫 Teacher Dashboard</h1>
+            <a href="{{ url_for('index') }}" class="back-btn">🏠 Home</a>
+        </div>
+
+        <div class="dashboard-buttons">
+            <button onclick="showSection('home')">🏠 Home</button>
+            <button onclick="showSection('chat')">💬 Chat</button>
+            <button onclick="showSection('upload')">📤 Upload</button>
+            <button onclick="showSection('profile')">👤 Profile</button>
+        </div>
+
+        <div id="uploadSection" class="upload-section">
+            <h3 class="section-title">Upload Assignment</h3>
+            <div class="file-input-container">
+                <input type="file" id="assignmentFile" accept=".pdf,.doc,.docx,.txt,.jpg,.png">
+            </div>
+            <button class="glass-button" onclick="uploadFile()" style="width: 100%;">
+                📎 Upload File
+            </button>
+            <div id="uploadStatus" style="margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

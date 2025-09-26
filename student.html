@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - GenialApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="glass-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>👩‍🎓 Student Dashboard</h1>
+            <a href="{{ url_for('index') }}" class="back-btn">🏠 Home</a>
+        </div>
+
+        <div class="dashboard-buttons">
+            <button onclick="showSection('home')">🏠 Home</button>
+            <button onclick="showSection('chat')">💬 Chat</button>
+            <button onclick="loadAssignments()">📚 Assignments</button>
+            <button onclick="showSection('profile')">👤 Profile</button>
+        </div>
+
+        <div id="assignmentsSection" class="upload-section">
+            <h3 class="section-title">Available Assignments</h3>
+            <button onclick="loadAssignments()" class="glass-button">🔄 Refresh</button>
+            <ul id="assignmentList" class="assignment-list"></ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Load assignments when page loads
+        window.onload = function() {
+            loadAssignments();
+        }
+    </script>
+</body>
+</html>
